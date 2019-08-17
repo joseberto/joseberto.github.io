@@ -1,0 +1,19 @@
+{
+  "name": "Projeto",
+  "author": {
+    "Nome": "Beto Cardoso",
+    "email": "eu@eumesmo.com.br"
+  },
+  "version": "0.0.1",
+  "keywords": [
+    "javascript",
+    "curso"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.10.1",
+    "animate.css": "3.7.2",
+    "bootstrap": "4.3.1",
+    "jquery": "3.4.1",
+    "jquery-toast-plugin": "^1.3.2"
+  }
+}

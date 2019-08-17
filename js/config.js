@@ -1,0 +1,1 @@
+const api_url = 'https://beto-frontend-api.firebaseio.com';

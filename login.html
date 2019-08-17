@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+  <head>
+    <meta charset="utf-8" />
+    <title>Projeto - Front End</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body class="container-fluid">
+
+    <div class="row">
+      <section class="col-lg-9 d-none d-sm-block welcome">
+        <img class="animated bounceInDown" src="img/logo.png" alt="Logo">
+
+        <h1 class="animated bounceInLeft">
+          Escolha você seu novo Chefe!
+        </h1>
+
+        <p class="animated zoomIn">
+          Bla Bla Bla Bla Bla Bla Bla Bla
+        </p>
+
+      </section>
+      <section class="col-lg-3 col-sm-12 login">
+        <!-- Imagem oculta -->
+        <div class="text-center mt-3">
+          <img class="d-sm-block d-md-none" src="img/logo_sm.png" alt="Logo">
+        </div>
+
+
+        <h2>site bla bla bla</h2>
+
+        <ul class="nav nav-tabs nav-fill nav-pills" id="tab" role="tablist">
+            <!-- -->
+            <li class="nav-item">
+              <a href="#login" class="nav-link active" data-toggle="tab">
+                login
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#cadastro" class="nav-link" data-toggle="tab">
+                Cadastro
+              </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="login">
+            <form action="" method="post">
+              <input class="form-control form-control-lg mt-4" type="email" placeholder="Digite seu Email" required>
+              <input class="form-control form-control-lg mt-2" type="password" placeholder="Digite a senha" required>
+              <button class="btn bg-gradient btn-lg btn-block mt-3 ">ENTRAR</button>
+
+              <div class="text-center mt-2">
+                <a href="#recupera-senha" data-toggle="modal">
+                  esquece a senha
+                </a>
+
+                <!--Inicio do Modal - recupera-senha -->
+                <div class="modal fade animated flipInY" id="recupera-senha" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Recuperar Senha</h5>
+                        <button class="close" data-dismiss="modal" arial-label="close">
+                          <span arial-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-body">
+                        <form action="">
+                          <label for="recover">Email:</label>
+                          <input id="recover" type="email" class="form-control form-control-lg" placeholder="Informe seu Email">
+                          <button class="btn btn-primary btn-lg mt-3">RECUPERAR</button>
+
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!--Final do Modal -->
+
+              </div>
+            </form>
+
+          </div>
+          <div class="tab-pane" id="cadastro">
+            <form action="" method="post" id="form_cadastro">
+              <input id="cadastro_nome" class="form-control form-control-lg mt-4" type="text" placeholder="Digite seu Nome" required>
+              <input id="cadastro_email" class="form-control form-control-lg mt-2" type="email" placeholder="Digite seu Email" required>
+              <input id="cadastro_senha" class="form-control form-control-lg mt-2" type="password" placeholder="Digite a senha" required>
+              <button id="cadastro_btn" class="btn bg-gradient btn-lg btn-block mt-3">CADASTRAR</button>
+            </form>
+
+            <div class="alert alert-info mt-5" style="display: none;" id="cadastro_ok">
+                <strong>Pronto!</strong> Cadastro Realizado!
+                <button id="novo_cadastro" class="btn btn-info mt-3">Novo Cadastro</button>
+            </div>
+            <div class="alert alert-danger" style="display: none;" id="cadastro_erro">
+                <strong>Erro:</strong> Tente novamente.
+            </div>
+
+          </div>
+        </div>
+
+        <!--Inicio do Modal - Resposta
+        <div class="modal fade animated flipInY" id="cadastro-sucesso" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Sucesso!</h5>
+                <button class="close" data-dismiss="modal" arial-label="close">
+                  <span arial-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <form action="">
+                  <label for="recover">CADASTROS COM SUCESSO!</label>
+                  <button class="btn btn-primary btn-lg mt-3 close">OK</button>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        Final do Modal -->
+
+      </section>
+
+    </div>
+
+
+    <script src="js/config.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

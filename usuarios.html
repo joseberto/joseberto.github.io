@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+  <head>
+    <meta charset="utf-8" />
+    <title>Projeto - Front End</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <section class="col-lg-2">
+
+        </section>
+        <section class="col-lg-10">
+
+
+          <div class="card mt-5">
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <h2 class="card-title">Usuarios<h2>
+                  </div>
+
+                  <div class="col-6 text-right">
+                    <button class="btn btn-outline-primary text-right"
+                            data-toggle="modal" data-target="#modal-novo-usuario">
+                       Novo Usuário</button>
+                  </div>
+
+                </div>
+
+                <hr>
+                <table class="table table-hover table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Registrado em</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="tabela-usuarios">
+
+                  </tbody>
+
+                </table>
+
+              <!-- Excluir ?-->
+              <div id="modal-excluir" class="modal fade animated flipInY" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Excluir Usuário</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Confirma exclusão do Usuário:
+                        <strong id="user-excluir"></strong>?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button id="confirmar-excluir" type="button" class="btn btn-primary" >Excluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+
+    <div id="modal-novo-usuario" class="modal fade animated flipInY" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Novo Usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <form id="form-cadastro" action="#" method="post">
+            <div class="modal-body">
+              <input id="cadastro_nome" class="form-control form-control-lg mt-4" type="text" placeholder="Digite seu Nome" required>
+              <input id="cadastro_email" class="form-control form-control-lg mt-2" type="email" placeholder="Digite seu Email" required>
+              <input id="cadastro_senha" class="form-control form-control-lg mt-2" type="password" placeholder="Digite a senha" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button class="btn btn-primary">Confirmar</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modal-editar-usuario" class="modal fade animated flipInY" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editando Usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <form id="form-editar" action="#" method="post">
+            <div class="modal-body">
+              <input id="editar_nome" class="form-control form-control-lg mt-4" type="text" placeholder="Digite seu Nome" required>
+              <input id="editar_email" class="form-control form-control-lg mt-2" type="email" placeholder="Digite seu Email" required>
+              <input id="editar_senha" class="form-control form-control-lg mt-2" type="password" placeholder="Digite a senha" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button class="btn btn-primary">Gravar Dados</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="js/usuarios.js"></script>
+  </body>
+</html>
